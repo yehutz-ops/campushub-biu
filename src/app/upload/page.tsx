@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Topbar } from "@/components/layout/topbar";
-import { Sidebar } from "@/components/layout/sidebar";
 import { Button } from "@/components/ui/button";
 import { UploadCloud, CheckCircle2, ChevronLeft } from "lucide-react";
 // import { uploadMaterialAction } from "@/app/actions/material"; 
@@ -31,7 +30,6 @@ export default function UploadPage() {
     <div className="flex min-h-screen flex-col bg-muted/10">
       <Topbar />
       <div className="flex flex-1">
-        <Sidebar />
         <main className="flex-1 p-6 md:p-10 max-w-screen-xl mx-auto w-full relative">
           <div className="mb-10 text-center">
             <h1 className="text-4xl font-black tracking-tight text-foreground">העלאת חומר לימוד חדש 🚀</h1>

@@ -1,4 +1,5 @@
-import { Search, Bell, Menu, Plus } from "lucide-react";
+import Link from "next/link";
+import { Search, Bell, Menu, Plus, Home, BookOpen, HandHeart, ShoppingBag, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Topbar() {
@@ -21,17 +22,26 @@ export function Topbar() {
           </div>
         </div>
 
-        {/* Center: Global Search */}
-        <div className="hidden flex-1 items-center justify-center px-6 md:flex">
-          <div className="relative w-full max-w-lg group">
-            <Search className="absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground group-focus-within:text-blue-500 transition-colors" />
-            <input 
-              type="text" 
-              placeholder="חיפוש קורסים, סיכומים או שירותים..." 
-              className="h-10 w-full rounded-full border border-input bg-muted/40 pr-10 pl-4 text-sm ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:border-blue-500 placeholder:text-muted-foreground hover:bg-muted/80 shadow-inner"
-            />
+        {/* Center: Navigation */}
+        <nav className="hidden flex-1 items-center justify-center px-6 md:flex gap-1">
+          <div className="flex items-center gap-1 bg-muted/40 p-1.5 rounded-full border border-input shadow-inner">
+            <Link href="/" title="בית" className="p-2.5 rounded-full text-muted-foreground hover:bg-white hover:text-indigo-600 hover:shadow-sm transition-all">
+              <Home className="w-5 h-5" />
+            </Link>
+            <Link href="/courses" title="קורסים" className="p-2.5 rounded-full text-muted-foreground hover:bg-white hover:text-indigo-600 hover:shadow-sm transition-all">
+              <BookOpen className="w-5 h-5" />
+            </Link>
+            <Link href="/requests" title="מרכז הבקשות" className="p-2.5 rounded-full text-muted-foreground hover:bg-white hover:text-indigo-600 hover:shadow-sm transition-all">
+              <HandHeart className="w-5 h-5" />
+            </Link>
+            <Link href="/marketplace" title="מרקטפלייס" className="p-2.5 rounded-full text-muted-foreground hover:bg-white hover:text-indigo-600 hover:shadow-sm transition-all">
+              <ShoppingBag className="w-5 h-5" />
+            </Link>
+            <Link href="/dashboard" title="האזור שלי" className="p-2.5 rounded-full text-muted-foreground hover:bg-white hover:text-indigo-600 hover:shadow-sm transition-all">
+              <LayoutDashboard className="w-5 h-5" />
+            </Link>
           </div>
-        </div>
+        </nav>
 
         {/* Left side in RTL (Actions & Profile) */}
         <div className="flex items-center gap-2 md:gap-4">

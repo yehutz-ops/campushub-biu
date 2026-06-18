@@ -1,5 +1,4 @@
 import { Topbar } from "@/components/layout/topbar";
-import { Sidebar } from "@/components/layout/sidebar";
 import { Crown, FileText } from "lucide-react";
 import { ProfileHeader } from "@/components/profile/profile-header";
 import { PerformanceStats } from "@/components/profile/performance-stats";
@@ -120,7 +119,6 @@ export default function UserProfilePage({ params }: { params: { username: string
     <div className="flex min-h-screen flex-col bg-[#f8fafc]">
       <Topbar />
       <div className="flex flex-1">
-        <Sidebar />
         <main className="flex-1 p-0 md:p-0 relative w-full overflow-hidden">
           <div className="max-w-[1600px] mx-auto w-full pb-10">
             {/* Header Component */}

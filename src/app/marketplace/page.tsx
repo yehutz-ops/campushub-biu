@@ -1,6 +1,5 @@
 import { MaterialCard } from "@/components/marketplace/material-card";
 import { Topbar } from "@/components/layout/topbar";
-import { Sidebar } from "@/components/layout/sidebar";
 import { Filter, SortDesc, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -18,7 +17,6 @@ export default function MarketplacePage() {
     <div className="flex min-h-screen flex-col bg-muted/10">
       <Topbar />
       <div className="flex flex-1">
-        <Sidebar />
         <main className="flex-1 p-6 md:p-10 max-w-screen-2xl mx-auto w-full relative">
           <div className="absolute top-0 left-0 right-0 h-[400px] w-full bg-gradient-to-b from-blue-50/60 to-transparent dark:from-blue-950/20 -z-10" />
           
