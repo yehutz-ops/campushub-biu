@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -20,16 +20,18 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-            <Button asChild size="lg" className="h-14 px-8 text-lg w-full sm:w-auto shadow-xl hover:scale-105 transition-transform">
-              <Link href="/dashboard">
-                היכנס לאזור האישי
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg w-full sm:w-auto hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-              <Link href="/marketplace">
-                חפש חומרי לימוד
-              </Link>
-            </Button>
+            <Link 
+              href="/dashboard"
+              className={buttonVariants({ size: "lg" }) + " h-14 px-8 text-lg w-full sm:w-auto shadow-xl hover:scale-105 transition-transform"}
+            >
+              היכנס לאזור האישי
+            </Link>
+            <Link 
+              href="/marketplace"
+              className={buttonVariants({ variant: "outline", size: "lg" }) + " h-14 px-8 text-lg w-full sm:w-auto hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"}
+            >
+              חפש חומרי לימוד
+            </Link>
           </div>
         </div>
       </section>
