@@ -1,0 +1,152 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String  @id @default(uuid())
+  clerkId            String  @unique
+  email              String  @unique
+  username           String? @unique
+  firstName          String?
+  lastName           String?
+  avatarUrl          String?
+  academicDepartment String?
+  role               Role    @default(STUDENT)
+  
+  // Performance metrics
+  totalDownloads     Int     @default(0)
+  averageRating      Float   @default(0.0)
+  positiveReviewsPct Float   @default(0.0)
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  materials          Material[]
+  services           Service[]
+  interactions       UserInteraction[]
+  reviewsGiven       Review[]
+}
+
+enum Role {
+  STUDENT
+  TUTOR
+  ADMIN
+}
+
+model Department {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  courses     Course[]
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Course {
+  id           String      @id @default(uuid())
+  code         String      @unique
+  title        String
+  lecturer     String?
+  syllabusUrl  String?
+  
+  departmentId String
+  department   Department  @relation(fields: [departmentId], references: [id])
+  
+  materials    Material[]
+
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model Material {
+  id           String      @id @default(uuid())
+  title        String
+  description  String?
+  fileUrl      String      // External storage link
+  fileType     String      // e.g., PDF, DOCX
+  tags         String[]    // e.g., Premium, New, Popular
+  price        Float       @default(0.0) // 0 for free
+  
+  authorId     String
+  author       User        @relation(fields: [authorId], references: [id])
+  
+  courseId     String
+  course       Course      @relation(fields: [courseId], references: [id])
+  
+  reviews      Review[]
+  interactions UserInteraction[]
+
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model Service {
+  id           String      @id @default(uuid())
+  title        String
+  description  String
+  serviceType  ServiceType
+  price        Float
+  tags         String[]
+  
+  providerId   String
+  provider     User        @relation(fields: [providerId], references: [id])
+  
+  reviews      Review[]
+  interactions UserInteraction[]
+
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+enum ServiceType {
+  TUTORING
+  MARATHON_PREP
+  PREMIUM_SUMMARY
+}
+
+model Review {
+  id           String      @id @default(uuid())
+  rating       Int         // 1 to 5
+  comment      String?
+  
+  reviewerId   String
+  reviewer     User        @relation(fields: [reviewerId], references: [id])
+  
+  materialId   String?
+  material     Material?   @relation(fields: [materialId], references: [id])
+  
+  serviceId    String?
+  service      Service?    @relation(fields: [serviceId], references: [id])
+
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model UserInteraction {
+  id              String      @id @default(uuid())
+  interactionType InteractionType
+  
+  userId          String
+  user            User        @relation(fields: [userId], references: [id])
+  
+  materialId      String?
+  material        Material?   @relation(fields: [materialId], references: [id])
+  
+  serviceId       String?
+  service         Service?    @relation(fields: [serviceId], references: [id])
+
+  createdAt       DateTime    @default(now())
+}
+
+enum InteractionType {
+  SAVE
+  DOWNLOAD
+  UPVOTE
+}
