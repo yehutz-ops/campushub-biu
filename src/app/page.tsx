@@ -1,65 +1,75 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-col min-h-[calc(100vh-4rem)]">
+      {/* Hero Section */}
+      <section className="flex-1 flex flex-col items-center justify-center px-4 py-20 md:py-32 text-center bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
+        <div className="space-y-6 max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-blue-50 text-blue-700 ring-1 ring-inset ring-blue-700/10 dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-500/20 mb-4">
+            ברוכים הבאים לעידן החדש של הלמידה
+          </div>
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
+            CampusHub <span className="text-blue-600 dark:text-blue-500">BIU</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            הפלטפורמה המתקדמת ביותר לסטודנטים בבר-אילן.
+            <br />
+            סיכומים, מבחנים, שאלות ותשובות - הכל במקום אחד.
           </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+            <Button asChild size="lg" className="h-14 px-8 text-lg w-full sm:w-auto shadow-xl hover:scale-105 transition-transform">
+              <Link href="/dashboard">
+                היכנס לאזור האישי
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="h-14 px-8 text-lg w-full sm:w-auto hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <Link href="/marketplace">
+                חפש חומרי לימוד
+              </Link>
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 px-4 bg-white dark:bg-slate-950">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+          
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+            <div className="h-16 w-16 bg-blue-100 dark:bg-blue-900/50 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 text-3xl">
+              📚
+            </div>
+            <h3 className="text-2xl font-bold">חומרים איכותיים</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              מאגר עצום של סיכומים, מחברות ומבחנים משנים קודמות שעברו ביקורת איכות ע"י קהילת הסטודנטים.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+            <div className="h-16 w-16 bg-emerald-100 dark:bg-emerald-900/50 rounded-2xl flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-3xl">
+              🤝
+            </div>
+            <h3 className="text-2xl font-bold">קהילה תומכת</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              שתפו את הסיכומים שלכם, עזרו לסטודנטים אחרים וקבלו דירוגים ונקודות זכות במערכת.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+            <div className="h-16 w-16 bg-purple-100 dark:bg-purple-900/50 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 text-3xl">
+              ⚡
+            </div>
+            <h3 className="text-2xl font-bold">חיפוש חכם</h3>
+            <p className="text-slate-600 dark:text-slate-400">
+              מנוע חיפוש מתקדם המאפשר למצוא בדיוק את החומר שאתם צריכים לפי קורס, מרצה, או נושא.
+            </p>
+          </div>
+
         </div>
-      </main>
+      </section>
     </div>
   );
 }
