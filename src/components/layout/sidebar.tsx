@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { Home, BookOpen, ShoppingBag, LayoutDashboard, Settings } from "lucide-react";
+import { Home, BookOpen, ShoppingBag, LayoutDashboard, Settings, HandHeart } from "lucide-react";
 
 const navItems = [
   { name: "בית", href: "/", icon: Home },
   { name: "האזור שלי", href: "/dashboard", icon: LayoutDashboard },
   { name: "קורסים", href: "/courses", icon: BookOpen },
   { name: "מרקטפלייס", href: "/marketplace", icon: ShoppingBag },
+  { name: "מרכז הבקשות", href: "/requests", icon: HandHeart },
   { name: "הגדרות", href: "/settings", icon: Settings },
 ];
 
