@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 
 export async function uploadMaterialAction(formData: FormData) {
   // Protect the Server Action
-  const { userId } = auth();
+  const { userId } = await auth();
   if (!userId) {
     throw new Error("You must be logged in to upload materials.");
   }
