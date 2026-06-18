@@ -9,11 +9,10 @@ export const metadata = {
   description: "חיפוש קורסים, מרצים ומידע אקדמי",
 };
 
-export default async function CoursesPage({
-  searchParams,
-}: {
-  searchParams: { q?: string; dept?: string };
+export default async function CoursesPage(props: {
+  searchParams: Promise<{ q?: string; dept?: string }>;
 }) {
+  const searchParams = await props.searchParams;
   // Fetch courses with optional filters from URL (simulated via searchParams)
   const courses = await fetchCourses({
     search: searchParams.q,

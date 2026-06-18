@@ -8,7 +8,8 @@ import { notFound } from "next/navigation";
 import { StarRating } from "@/components/shared/StarRating";
 import { MetricProgressBar } from "@/components/shared/MetricProgressBar";
 
-export default async function CourseDetailsPage({ params }: { params: { id: string } }) {
+export default async function CourseDetailsPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const course = await fetchCourseDetails(params.id);
 
   if (!course) {
