@@ -58,7 +58,7 @@ export function Navbar() {
             
             {isSignedIn ? (
               <div className="border-2 border-slate-100 rounded-full p-0.5 hover:border-[#C9A94E]/30 transition-colors">
-                <UserButton afterSignOutUrl="/" appearance={{ elements: { avatarBox: "w-9 h-9" } }} />
+                <UserButton appearance={{ elements: { avatarBox: "w-9 h-9" } }} />
               </div>
             ) : (
               <Link href="/sign-in">
