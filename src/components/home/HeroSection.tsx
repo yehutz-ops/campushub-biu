@@ -43,14 +43,18 @@ export function HeroSection({ departments, degrees, courses, lecturers }: HeroSe
         <div className="absolute bottom-[-10%] left-[10%] w-[500px] h-[500px] bg-[#1E3A8A] rounded-full mix-blend-multiply filter blur-[150px] opacity-60" />
       </div>
 
-      <div className="text-center max-w-4xl mx-auto z-10 w-full">
-        <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-6 drop-shadow-lg">
+      <div className="text-center max-w-4xl mx-auto z-10 w-full mb-12">
+        <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-[13px] font-bold text-slate-200">
+          ✨ הפלטפורמה של סטודנטים באוניברסיטת בר-אילן
+        </div>
+        <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-6 drop-shadow-lg leading-tight">
           כל חומרי הלימוד <br />
-          <span className="text-[#C9A94E]">במקום אחד</span>
+          <span className="text-[#C9A94E] relative inline-block mt-2">במקום אחד</span>
         </h1>
-        <p className="text-lg md:text-xl text-slate-300 font-medium max-w-2xl mx-auto mb-12">
+        <p className="text-lg md:text-xl text-slate-300 font-medium max-w-2xl mx-auto">
           המנוע החכם של CampusHubBIU לחיפוש, סינון ושיתוף חומרי לימוד, סיכומים ומידע אקדמי.
         </p>
+      </div>
 
         {/* Search & Filter Engine */}
         <div className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 shadow-2xl">
