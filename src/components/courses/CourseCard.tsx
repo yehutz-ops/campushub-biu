@@ -27,7 +27,7 @@ export function CourseCard({
   return (
     <Link 
       href={`/courses/${id}`}
-      className="group block bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-[#C9A94E]/30 transition-all duration-300 relative overflow-hidden"
+      className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-[#C9A94E]/15 hover:border-[#C9A94E]/30 relative overflow-hidden group"
     >
       <div className="absolute top-0 right-0 w-full h-1.5 bg-gradient-to-l from-[#C9A94E] to-yellow-300 opacity-0 group-hover:opacity-100 transition-opacity" />
       

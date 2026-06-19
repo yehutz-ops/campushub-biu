@@ -1,7 +1,7 @@
 import { fetchCourses } from "@/actions/courses";
 import { CourseCard } from "@/components/courses/CourseCard";
 import { FilterSidebar } from "@/components/courses/FilterSidebar";
-import { Topbar } from "@/components/layout/topbar";
+import { Navbar } from "@/components/layout/Navbar";
 import { Search } from "lucide-react";
 
 export const metadata = {
@@ -21,7 +21,7 @@ export default async function CoursesPage(props: {
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50/50" dir="rtl">
-      <Topbar />
+      <Navbar />
       
       {/* Page Header */}
       <div className="bg-white border-b border-slate-200">

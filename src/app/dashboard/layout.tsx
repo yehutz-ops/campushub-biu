@@ -1,4 +1,4 @@
-import { Topbar } from "@/components/layout/topbar";
+import { Navbar } from "@/components/layout/Navbar";
 
 export default function DashboardLayout({
   children,
@@ -7,7 +7,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="flex min-h-screen flex-col bg-muted/10">
-      <Topbar />
+      <Navbar />
       <div className="flex flex-1">
         <main className="flex-1 p-6 md:p-10 max-w-screen-2xl mx-auto w-full relative">
           {/* subtle ambient background effect */}

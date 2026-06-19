@@ -9,7 +9,7 @@ export const metadata = {
   description: "Marketplace for Knowledge",
 };
 
-import { Topbar } from "@/components/layout/topbar";
+import { Navbar } from "@/components/layout/Navbar";
 
 export default async function RequestsPage() {
   // Fetch active requests from our Server Action
@@ -17,7 +17,7 @@ export default async function RequestsPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50/50" dir="rtl">
-      <Topbar />
+      <Navbar />
       {/* Hero Section */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

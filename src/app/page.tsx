@@ -1,4 +1,4 @@
-import { Topbar } from "@/components/layout/topbar";
+import { Navbar } from "@/components/layout/Navbar";
 import { fetchHomeData, fetchTopContributors } from "@/actions/home";
 import { HeroSection } from "@/components/home/HeroSection";
 import { AnalyticsBar } from "@/components/home/AnalyticsBar";
@@ -14,7 +14,7 @@ export default async function HomePage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[#f8fafc] font-sans" dir="rtl">
-      <Topbar />
+      <Navbar />
 
       <main className="flex-1 w-full">
         {/* 1. Hero Layer with Filter Engine */}

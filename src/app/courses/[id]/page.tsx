@@ -1,5 +1,5 @@
 import { fetchCourseDetails } from "@/actions/courses";
-import { Topbar } from "@/components/layout/topbar";
+import { Navbar } from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, UploadCloud, FileText, UserCircle2, Calendar, BookOpen, GraduationCap } from "lucide-react";
@@ -18,7 +18,7 @@ export default async function CourseDetailsPage(props: { params: Promise<{ id: s
 
   return (
     <div className="flex min-h-screen flex-col bg-[#f8fafc]" dir="rtl">
-      <Topbar />
+      <Navbar />
 
       {/* Breadcrumbs */}
       <div className="bg-white border-b border-gray-100">
