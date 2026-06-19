@@ -54,7 +54,6 @@ export function HeroSection({ departments, degrees, courses, lecturers }: HeroSe
         <p className="text-lg md:text-xl text-slate-300 font-medium max-w-2xl mx-auto">
           המנוע החכם של CampusHubBIU לחיפוש, סינון ושיתוף חומרי לימוד, סיכומים ומידע אקדמי.
         </p>
-      </div>
 
         {/* Search & Filter Engine */}
         <div className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 shadow-2xl">
